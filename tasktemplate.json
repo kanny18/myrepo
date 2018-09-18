@@ -1,0 +1,17 @@
+{
+    "containerDefinitions": [
+        {
+            "image": "208591112115.dkr.ecr.us-east-1.amazonaws.com/myrepo:latest",
+            "name": "spring3hibernate",
+            "cpu": 128,
+            "memory": 128,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 80
+                     }
+            ]
+        }
+    ]
+}
