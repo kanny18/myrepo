@@ -4,16 +4,17 @@ MAINTAINER kunal
 ENV CATALINA_HOME /opt/tomcat/
 ENV PATH $CATALINA_HOME/bin:$PATH
 ENV JAVA_URL http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-i586.tar.gz
-ENV JAVA_HOME /opt/java
+ENV JRE_HOME /opt/java
 
 
 RUN apt-get update && apt-get upgrade -y \
-    && apt-get install wget -y
+    && apt-get install wget -y \
+    && apt-get install libc6-i386
 
 # Installing JAVA
-RUN mkdir -p "$JAVA_HOME"
-RUN echo $JAVA_HOME
-RUN cd $JAVA_HOME && wget --no-check-certificate -c --header  "Cookie: oraclelicense=accept-securebackup-cookie" $JAVA_URL \
+RUN mkdir -p "$JRE_HOME"
+RUN echo $JRE_HOME
+RUN cd $JRE_HOME && wget --no-check-certificate -c --header  "Cookie: oraclelicense=accept-securebackup-cookie" $JAVA_URL \
     && tar -xvf jdk-8u181-linux-i586.tar.gz  --strip-components=1
 
 
@@ -31,5 +32,5 @@ RUN mkdir -p /opt/tomcat && cd /opt/tomcat \
     && rm apache-tomcat-8.5.34.tar.gz
 # add data below to show over browser
 ADD ./target/*.war $CATALINA_HOME/webapps/
-
-EXPOSE 8080
+CMD ["catalina.sh","run"]
+#EXPOSE 8080
