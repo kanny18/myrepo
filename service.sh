@@ -1,3 +1,4 @@
+REGION=us-east-1
 REPOSITORY_NAME=myrepo
 CLUSTER=mycluster
 FAMILY=spring3hibernate
