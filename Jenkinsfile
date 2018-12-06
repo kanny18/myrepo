@@ -4,7 +4,7 @@ pipeline{
         
          stage('Checkout'){
          steps{
-             git credentialsId: 'f182def9-1d2a-4aea-a083-fd780f06125b', url: 'https://github.com/kanny18/myrepo.git'
+             git credentialsId: '<######f9-1d2a-4aea-a083-fd780f#######>', url: 'https://github.com/kanny18/myrepo.git'
          }
          }
          stage('Building Maven Project'){
