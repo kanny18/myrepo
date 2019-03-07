@@ -4,8 +4,8 @@ pipeline{
         
          stage('Checkout'){
          steps{
-             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'a1700635-21c6-4fb8-bea4-28a3a7d15204', url: 'https://github.com/kanny18/myrepo.git']]]
-             checkout  scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'test']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'a1700635-21c6-4fb8-bea4-28a3a7d15204', url: 'https://github.com/kanny18/repo.git']]]
+             checkout  scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'a1700635-21c6-4fb8-bea4-28a3a7d15204', url: 'https://github.com/kanny18/myrepo.git']]]
+             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'test']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'a1700635-21c6-4fb8-bea4-28a3a7d15204', url: 'https://github.com/kanny18/repo.git']]]
  
              //checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'a1700635-21c6-4fb8-bea4-28a3a7d15204', url: 'https://github.com/kanny18/repo.git']]]
              //git credentialsId: '<######f9-1d2a-4aea-a083-fd780f#######>', url: 'https://github.com/kanny18/myrepo.git'
