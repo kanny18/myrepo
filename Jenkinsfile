@@ -32,7 +32,7 @@ pipeline{
               sh 'sh dockerbuild.sh'
           }
       }
-      stage ('Pushing Image to ECR'){
+      stage ('Pushing Image to ECR ONCE'){
           steps('push image'){
               sh 'sh dockerpush.sh'
           }
