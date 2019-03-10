@@ -33,4 +33,4 @@ RUN mkdir -p /opt/tomcat && cd /opt/tomcat \
 # add data below to show over browser
 ADD ./target/*.war $CATALINA_HOME/webapps/
 CMD ["catalina.sh","run"]
-#EXPOSE 8080
+#EXPOSE 8080 port
