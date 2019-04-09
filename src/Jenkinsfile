@@ -1,0 +1,7 @@
+node()
+{
+stage('checkout')
+{
+sh " touch test.txt"
+}
+}
