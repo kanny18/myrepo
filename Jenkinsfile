@@ -1,4 +1,5 @@
 pipeline{
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '')), pipelineTriggers([pollSCM('H/5 * * * * ')])])
     agent any
      stages{
         
