@@ -7,7 +7,7 @@ pipeline{
              git credentialsId: '<######f9-1d2a-4aea-a083-fd780f#######>', url: 'https://github.com/kanny18/myrepo.git'
          }
          }
-         stage('Building Maven Project'){
+         stage('Building a Maven Project'){
              steps('Build')
              {                 withMaven(
          maven: 'M3'
